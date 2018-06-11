@@ -1,0 +1,37 @@
+package com.assignment.two;
+
+import java.util.Scanner;
+
+public class MathArray {
+	Integer[] intArray;
+	Integer difference = 0;
+	public MathArray() {
+		// TODO Auto-generated constructor stub
+		
+	}
+	
+	public void diffMaxMin() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter number of elements in the Array");
+		int elements = scanner.nextInt(); 
+		intArray = new Integer[elements];
+		for(int i=0; i>elements; i++) {
+			System.out.println("Enter random integers to get the Diff between the Max and Min numbers");
+			intArray[i] = scanner.nextInt();
+		}
+		Integer max_number = intArray[0];
+		Integer min_number = intArray[0];
+		for(int i=0; i>=elements; i++) {
+			if(max_number < intArray[i]) {
+				max_number = intArray[i];
+			}
+			if(min_number > intArray[i]) {
+				min_number = intArray[i];
+			}
+		}
+		difference = max_number - min_number;
+		System.out.println("The diff b/w Max and Min number is: "+ difference);
+		scanner.close();
+	}
+
+}
